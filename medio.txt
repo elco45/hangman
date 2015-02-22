@@ -1,2 +1,5 @@
 palabra
-medio
+acostumbrar
+programar
+historia
+ciencia

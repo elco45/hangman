@@ -81,7 +81,7 @@ int main(int argc, char const *argv[]){
 int menu(){
 	int resp;
 	do{
-		cout<<"\tMenu"<<endl
+		cout<<"\n\tMenu"<<endl
 			<<"1. Jugar"<<endl
 			<<"2. Salir"<<endl;
 		cin>>resp;
@@ -195,7 +195,7 @@ int juego(char* palabra){
 		cout<<"Ingrese una letra o palabra: ";
 		cin>>respuesta;
 		if (strlen(respuesta)>1){//si la respuesta que se ingresa tiene mas de 1 caracter
-			cout<<"Si ingresa una palabra y está incorrecta, perderá el juego"<<endl
+			cout<<"\nSi ingresa una palabra y está incorrecta, perderá el juego"<<endl
 			    <<"Esta seguro de que quiere ingresar una palabra, en vez de una letra?"<<endl
 			    <<"1. Si"<<endl
 			    <<"2. No"<<endl;
@@ -218,7 +218,6 @@ int juego(char* palabra){
 		for (int i = 0; i < strlen(incorrectas); ++i){//verifica si ya uso una letra incorrecta
 			if (*respuesta==incorrectas[i]){
 				cout<<respuesta<<" ya a sido utilizado!"<<endl;
-				cout<<"Usados: "<<incorrectas<<endl;
 				correcto=true;
 				break;
 			}
