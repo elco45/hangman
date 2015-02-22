@@ -15,11 +15,12 @@ int main(int argc, char const *argv[]){
 	char* w=new char[100];
 	int op;
 	char** array=new char*[100];
+	int cont=0;
 	do{
 		op=menu();//dependiendo de la dificultad del juego se selecciona un archivo
 		if (op==1){
 			ifstream file("facil.txt");
-			int cont=0;
+			cont=0;
 			while (!file.eof()){
 				file.getline(w,sizeof(file));//agarra la linea
 				array[cont]=new char(strlen(w)+1);
@@ -31,7 +32,7 @@ int main(int argc, char const *argv[]){
 			strcpy(w,array[ran]);
 		}else if(op==2){
 			ifstream file("medio.txt");
-			int cont=0;
+			cont=0;
 			while (!file.eof()){
 				file.getline(w,sizeof(file));
 				array[cont]=new char(strlen(w)+1);
@@ -43,7 +44,7 @@ int main(int argc, char const *argv[]){
 			strcpy(w,array[ran]);
 		}else if(op==3){
 			ifstream file("dificil.txt");
-			int cont=0;
+			cont=0;
 			while (!file.eof()){
 				file.getline(w,sizeof(file));
 				array[cont]=new char(strlen(w)+1);
@@ -74,6 +75,11 @@ int main(int argc, char const *argv[]){
 		}else{
 			cout<<"Valor invalido"<<endl;
 		}
+		delete[] w;
+		for (int i = 0; i < cont; ++i){
+			delete[] array[i];
+		}
+
 	}while(true);
 	return 0;
 }
